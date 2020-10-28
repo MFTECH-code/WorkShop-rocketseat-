@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+    HTML 
+
+    HyperText -> Textos que aceitam links e audio visual
+
+    Markup -> Marcação feitas com <tags>
+
+    Language -> Linguagem
+
+    OBS: html não é uma linguagem de progrmação
+-->
+<html> <!-- Tag html -->
+    <head>
+        <meta charset="UTF-8""> <!-- charset: Tipo de caractéres que terão na minha página -->
+        <!--
+            Responsável por receber configurações da página
+        -->
+        <title>Casa Criativa</title> <!-- Título da página -->
+
+        <style>
+            /*
+                CSS -> Cascading StyleSheet (Estilo em cascata)
+            */
+           body {
+               background: #e5e5e5;
+               color: #24282b;
+
+               text-align: center;
+           }
+
+           button {
+               border: none;
+               color: #ff5E84;
+
+               font-weight: normal;
+               background: none;
+           }
+
+           .fat {
+               color: white;
+               background: #ff5E84;
+           }
+
+           .hide {
+               display: none;
+           }
+
+           #footer a {
+               color: #25282b;
+               text-decoration: none;
+           } 
+        </style>
+    </head>
+
+    <body>
+        <img src="/assets/logomarca.png" alt="Logo"> <!-- Tag de imagem, carraga 2 atributos -->
+        <!-- 
+            src: Caminho de onde está o arquivo
+            alt: Texto alternativo caso a imagem não seja encontrada
+        -->
+        <p>
+            Ficar em casa em períodos longos, não deve ser nada fácil.
+        </p> <!-- Tag de paragrafo -->
+
+        <p>
+            Por isso Iremos catalogar ideias, <strong>brincadeiras, jogos, filmes,
+             livros, cursos, dicas</strong> e tudos que for necessário para tornar esse momento mais interessante.
+        </p>
+
+        <p>
+            Comece clicando em ver ideias para as ideias cadastradas e contribua adicionando a sua vida.
+        </p>
+
+        <button>+ Adicionar ideia</button>
+        <button class="fat">Ver ideias</button>
+
+        <p id="footer">Com ❤️ <a href="https://rocketseat.com.br/">rocketSeat</a></p>
+
+        <script>
+            // Pro JS tudo é um objeto
+            const button = document.querySelector("button.fat") // Pegando o botão 
+            button.addEventListener("click", function() {
+                // Fazer o footer aparecer e desaparecer
+                document.querySelector("#footer")
+                    .classList
+                    .toggle("hide")   
+            }) // Ouvindo o evento de click
+
+        </script>
+    </body>
+</html>
