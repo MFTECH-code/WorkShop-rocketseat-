@@ -18,75 +18,138 @@
         -->
         <title>Casa Criativa</title> <!-- Título da página -->
 
-        <style>
-            /*
-                CSS -> Cascading StyleSheet (Estilo em cascata)
-            */
-           body {
-               background: #e5e5e5;
-               color: #24282b;
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-               text-align: center;
-           }
-
-           button {
-               border: none;
-               color: #ff5E84;
-
-               font-weight: normal;
-               background: none;
-           }
-
-           .fat {
-               color: white;
-               background: #ff5E84;
-           }
-
-           .hide {
-               display: none;
-           }
-
-           #footer a {
-               color: #25282b;
-               text-decoration: none;
-           } 
-        </style>
+        <link rel="stylesheet" href="style.css"> <!-- rel: Relação, href: Localização -->
     </head>
 
     <body>
-        <img src="/assets/logomarca.png" alt="Logo"> <!-- Tag de imagem, carraga 2 atributos -->
-        <!-- 
-            src: Caminho de onde está o arquivo
-            alt: Texto alternativo caso a imagem não seja encontrada
-        -->
-        <p>
-            Ficar em casa em períodos longos, não deve ser nada fácil.
-        </p> <!-- Tag de paragrafo -->
 
-        <p>
-            Por isso Iremos catalogar ideias, <strong>brincadeiras, jogos, filmes,
-             livros, cursos, dicas</strong> e tudos que for necessário para tornar esse momento mais interessante.
-        </p>
+        <div id="container">
+            <!--
+                A div nos ajuda a organizar nossas caixas
+            -->
+            <section id="intro">
+                <header>
+                    <img src="/assets/logomarca.png" alt="Logo"> <!-- Tag de imagem, carraga 2 atributos -->
+                    <!-- 
+                        src: Caminho de onde está o arquivo
+                        alt: Texto alternativo caso a imagem não seja encontrada
+                    -->
+                </header>
+                
+                <main>
+                    <p>
+                        Ficar em casa em períodos longos, não deve ser nada fácil.
+                    </p> <!-- Tag de paragrafo -->
+    
+                    <p>
+                        Por isso Iremos catalogar ideias, <strong>brincadeiras, jogos, filmes,
+                        livros, cursos, dicas</strong> e tudos que for necessário para tornar esse momento mais interessante.
+                    </p>
+    
+                    <p>
+                        Comece clicando em ver ideias para as ideias cadastradas e contribua adicionando a sua vida.
+                    </p>
+                </main>
 
-        <p>
-            Comece clicando em ver ideias para as ideias cadastradas e contribua adicionando a sua vida.
-        </p>
+                <section id="buttons">
+                    <button onclick="onOff()">+ Adicionar ideia</button>
+                    <button class="fat">Ver ideias</button>
+                </section>
 
-        <button>+ Adicionar ideia</button>
-        <button class="fat">Ver ideias</button>
+                <footer>
+                    Com ❤️ <a href="https://rocketseat.com.br/">RocketSeat</a>
+                </footer>
+            </section>
 
-        <p id="footer">Com ❤️ <a href="https://rocketseat.com.br/">rocketSeat</a></p>
+            <section id="last-ideas">
+                <div class="idea">
+                    <img 
+                        src="https://www.flaticon.com/premium-icon/icons/svg/3242/3242257.svg" 
+                        alt="Curso de programação">
+                    
+                    <div class="content">
+                        <h3>Curso de programação</h3>
+                        <p>Estudo</p>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem omnis expedita, nihil quam itaque delectus sed alias reiciendis harum nobis ut explicabo minus perferendis recusandae, iusto, totam cumque similique!
+                        </div>
+                        <a href="#">Ir para ideia</a>
+                    </div>
+                </div>
 
-        <script>
-            // Pro JS tudo é um objeto
-            const button = document.querySelector("button.fat") // Pegando o botão 
-            button.addEventListener("click", function() {
-                // Fazer o footer aparecer e desaparecer
-                document.querySelector("#footer")
-                    .classList
-                    .toggle("hide")   
-            }) // Ouvindo o evento de click
+                <div class="idea">
+                    <img 
+                        src="https://www.flaticon.com/premium-icon/icons/svg/3242/3242372.svg" 
+                        alt="Exercícios">
+                    
+                    <div class="content">
+                        <h3>Exercícios</h3>
+                        <p>Saúde</p>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem omnis expedita, nihil quam itaque delectus sed alias reiciendis harum nobis ut explicabo minus perferendis recusandae, iusto, totam cumque similique!
+                        </div>
+                        <a href="#">Ir para ideia</a>
+                    </div>
+                </div>
 
-        </script>
+                <div class="idea">
+                    <img 
+                        src="https://www.flaticon.com/premium-icon/icons/svg/3242/3242296.svg" 
+                        alt="Meditação">
+                    
+                    <div class="content">
+                        <h3>Meditação</h3>
+                        <p>Mentalidade</p>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem omnis expedita, nihil quam itaque delectus sed alias reiciendis harum nobis ut explicabo minus perferendis recusandae, iusto, totam cumque similique!
+                        </div>
+                        <a href="#">Ir para ideia</a>
+                    </div>
+                </div>
+            </section>
+        </div> 
+
+        <!-- Modal -->
+        <div id="modal" class="hide">
+            <div class="content">
+                <h1>Nova Ideia</h1>
+
+                <form action="">
+                    <!-- Formulários -->
+                    <div class="input-wrapper">
+                        <label for="title">Título da ideia</label>
+                        <input type="text" name="title">
+                    </div>
+                
+                    <div class="input-wrapper">
+                        <label for="category">Categoria</label>
+                        <input type="text" name="category">
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="image">Link da imagem</label>
+                        <input type="url" name="image">
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="description">Digite uma descrição para essa ideia</label>
+                        <textarea name="description" cols="30" rows="10"></textarea>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="link">Link da ideia</label>
+                        <input type="url" name="link">
+                    </div>
+                
+                    <a href="#" onclick="onOff()">Voltar</a>
+                    <button>Salvar</button>
+                
+                </form>
+            </div>
+        </div>
+        
+        <script src="/scripts.js"></script> <!-- src: Localização do script -->
     </body>
 </html>
