@@ -8,9 +8,17 @@ Existe o conceito de front e back.
 - backend: Banco de dados, servidor
 
 O front se comunica com o back para que haja a transferencia de dados.
+
+O back é responsável por receber pedidos do cliente, e devolver para o front end uma resposta. O back deve ter uma regra de negóçios e para isso ele deve tratar os dados.
 # Tecnologias front end
 - HTML: Estrutura do site
 - CSS: Estilo do site
 - JS: Funcionalidades do site
+
+# Tecnologias back end
+- Node.js
+- Banco de dados
+
+
 
 

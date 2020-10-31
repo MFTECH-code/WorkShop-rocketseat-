@@ -1,0 +1,50 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section id="intro">
+                <header>
+                    <a href="/">
+                        <img src="/assets/logomarca.png" alt="Logo"> <!-- Tag de imagem, carraga 2 atributos -->
+                    </a>
+                    <!-- 
+                        src: Caminho de onde está o arquivo
+                        alt: Texto alternativo caso a imagem não seja encontrada
+                    -->
+                </header>
+                
+                <main>
+                    <p>
+                        Ficar em casa em períodos longos, não deve ser nada fácil.
+                    </p> <!-- Tag de paragrafo -->
+    
+                    <p>
+                        Por isso Iremos catalogar ideias, <strong>brincadeiras, jogos, filmes,
+                        livros, cursos, dicas</strong> e tudos que for necessário para tornar esse momento mais interessante.
+                    </p>
+    
+                    <p>
+                        Comece clicando em ver ideias para as ideias cadastradas e contribua adicionando a sua vida.
+                    </p>
+                </main>
+
+                <section id="buttons">
+                    <button onclick="onOff()">+ Adicionar ideia</button>
+                    <a href="/ideas" class="button"> Ver ideias</a>
+                </section>
+
+                <footer>
+                    Com ❤️ <a href="https://rocketseat.com.br/" target="_blank">RocketSeat</a>
+                </footer>
+</section>
+
+<section id="last-ideas">
+<!-- Com nunjucks podemos colocar as variáveis que criamos la no back end -->
+{% include "allIdeas.html" %}
+
+
+                
+</section>
+
+{% endblock %}
